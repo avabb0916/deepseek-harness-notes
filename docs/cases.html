@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第二批：案例篇路线图</title>
+<style>
+  :root {
+    --ink:#1b1a17; --muted:#6d685f; --line:#ddd7c9; --paper:#fbf9f3;
+    --accent:#b23a2a; --accent2:#1f4e5f; --code:#f2eee4; --hl:#f7efe2;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:ui-serif,"Songti SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.78; font-size:16.5px; }
+  .page { max-width:1080px; margin:0 auto; padding:48px 40px 72px; }
+  header.doc { border-bottom:3px solid var(--ink); padding-bottom:22px; margin-bottom:36px; }
+  .kicker { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+    font-weight:700; }
+  h1 { font-size:34px; line-height:1.28; margin:10px 0 14px; letter-spacing:-.01em; }
+  .meta { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:13px; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap; }
+  h2 { font-size:23px; margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line); }
+  h3 { font-size:18.5px; margin:28px 0 10px; color:var(--accent2); }
+  h4 { font-size:16px; margin:22px 0 8px; }
+  p { margin:0 0 14px; }
+  ul,ol { margin:0 0 16px; padding-left:24px; }
+  li { margin:5px 0; }
+  blockquote { margin:18px 0; padding:14px 18px; background:var(--hl);
+    border-left:4px solid var(--accent); color:#3f3a33; }
+  blockquote p { margin:0; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em;
+    background:var(--code); padding:1px 5px; border-radius:4px; }
+  pre.code { background:#22201d; color:#f4efe6; padding:16px 18px; border-radius:8px;
+    overflow:auto; font-size:13.5px; line-height:1.6; margin:16px 0; }
+  pre.code code { background:none; padding:0; color:inherit; }
+  .table-wrap { overflow-x:auto; margin:18px 0 22px; border:1px solid var(--line); border-radius:8px; }
+  table { width:100%; border-collapse:collapse; font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:14px; background:#fff; }
+  th { background:#f0ebdf; text-align:left; padding:10px 12px; border-bottom:2px solid var(--line);
+    font-weight:700; white-space:nowrap; }
+  td { padding:10px 12px; border-bottom:1px solid #eee7d9; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  hr { border:none; border-top:1px dashed var(--line); margin:30px 0; }
+  figure.fig { margin:22px 0 26px; text-align:center; }
+  figure.fig img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  figcaption { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12.5px; color:var(--muted); margin-top:8px; }
+  img.inline-img { max-width:100%; height:auto; }
+  .img-missing { margin:18px 0; padding:14px 16px; background:#fdf0ee; border:1px dashed var(--accent);
+    border-radius:6px; font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--accent); }
+  a { color:var(--accent2); text-decoration:underline; text-underline-offset:3px; }
+  footer.doc { margin-top:56px; padding-top:18px; border-top:3px solid var(--ink);
+    font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif; font-size:12.5px; color:var(--muted); }
+  @media print {
+    body { background:#fff; font-size:12.5pt; }
+    .page { max-width:none; padding:0; }
+    h2 { page-break-after:avoid; }
+    tr,li,blockquote,figure.fig { page-break-inside:avoid; }
+    figure.fig img { max-width:100%; }
+    .table-wrap { overflow:visible; }
+    a { color:inherit; text-decoration:none; }
+  }
+</style>
+</head>
+<body><div class="booknav" style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>
+<div class="page">
+<header class="doc">
+  <div class="kicker">DSH RESEARCH · 案例</div>
+  <h1>第二批：案例篇路线图</h1>
+  <div class="meta"><span>版本 v1.0 ｜ 2026-11-08 13:05 (Asia/Shanghai) ｜ 依据：Eric 口径（系列要有案例）+ 现有 24 篇笔记</span></div>
+</header>
+<blockquote>第一批 24 篇讲&quot;它是什么、怎么跑、为什么这样设计&quot;；第二批讲&quot;我用它做成了什么&quot;。</blockquote>
+<h2>为什么要有第二批</h2>
+<p>光讲机制，读者学不会用；光讲案例，读者不知道为什么。两批合起来才是一套完整的&quot;从 0 到 1&quot;。</p>
+<h2>六个案例（暂定）</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>案例</th>
+<th>回答的问题</th>
+<th>证据</th>
+</tr></thead><tbody>
+<tr><td>25</td><td>内容生产流水线</td><td>选题 → 写作 → 质检 → 配图 → 建草稿，一条链怎么跑</td><td>本地 <code>tools/article_pipeline.sh</code>、qc 脚本、X 发布器</td></tr>
+<tr><td>26</td><td>产品调研</td><td>抓竞品、拆站、判词，agent 怎么替我做重复劳动</td><td>工作区调研目录、拆站方法论</td></tr>
+<tr><td>27</td><td>知识库管理</td><td>Obsidian 专题、00 指引、索引怎么自动维护</td><td>专题库、同步脚本</td></tr>
+<tr><td>28</td><td>Vibe coding</td><td>从一句需求到能跑的小工具，中间卡在哪</td><td>研究台插件、原型页面</td></tr>
+<tr><td>29</td><td>多 agent 团队</td><td>8 个角色一晚产出 24 篇，怎么分工不打架</td><td>本次生产的任务板、写域、失败记录</td></tr>
+<tr><td>30</td><td>插件矩阵</td><td>研究台 / linkdesk / 后续插件，边界怎么划</td><td>插件源码、可行性评估</td></tr>
+</tbody></table></div>
+<h2>每个案例的写法（沿用笔记体）</h2>
+<ul>
+<li>四行笔记头（我带着的问题 / 读之前我以为 / 读完的答案 / 三个自测问题）</li>
+<li>人话版开场</li>
+<li>真实过程：需求 → 第一版 → 失败 → 改版 → 结果</li>
+<li>术语小抄 + 我还没搞懂</li>
+<li>本文依据（代码路径、命令输出、数据）</li>
+</ul>
+<h2>发布顺序</h2>
+<p>第一批 24 篇发到第 10 天左右，开始穿插案例篇；也可以先把 25（内容生产）提前，因为它最贴近&quot;关注我的人想学的东西&quot;。</p>
+<h2>变更记录</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>版本</th>
+<th>时间</th>
+<th>变更</th>
+</tr></thead><tbody>
+<tr><td>v1.0</td><td>2026-11-08 13:05</td><td>首版：六个案例 + 写法 + 发布建议</td></tr>
+</tbody></table></div>
+<footer class="doc">版本 v1.0 ｜ 2026-11-08 13:05 (Asia/Shanghai) ｜ 依据：Eric 口径（系列要有案例）+ 现有 24 篇笔记</footer>
+</div>
+</body>
+</html>
