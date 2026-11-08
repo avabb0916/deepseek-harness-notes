@@ -69,9 +69,9 @@
 <header class="doc">
   <div class="kicker">DSH RESEARCH · 2026</div>
   <h1>我打开配置文件，里面只有两个方括号</h1>
-  <div class="meta"><span>版本 v1.1 ｜ 2026-11-08 02:32 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</span></div>
+  <div class="meta"><span>版本 v1.2 ｜ 2026-11-08 02:32 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</span></div>
 </header>
-<blockquote>系列第 14 篇 ｜ 版本 v1.1 ｜ 2026-11-08 02:32 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</blockquote>
+<blockquote>系列第 14 篇 ｜ 版本 v1.2 ｜ 2026-11-08 02:32 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</blockquote>
 <blockquote>学习笔记 ｜ 第 14 站 ｜ 我带着的问题：一个启动起来有完整界面、几十个工具的 profile，它的配置文件里为什么只有两个方括号？<br>读之前我以为：配置就是一个大 YAML，插件名、参数、开关全写在一个文件里，改哪行就去找哪个文件。<br>读完我的一句话答案：配置是一叠补丁，最底下那张是白纸，产品是从白纸往上叠出来的。<br>读完我能答出来的三个问题：一，那 197 个节点是从哪几层叠出来的？二，层与层之间怎么覆盖，为什么不是深合并？三，为什么调换 YAML 里两行的先后没有用？</blockquote>
 <p>这篇讲一个我很长时间没想通的事：一个能干的软件，配置文件打开来几乎是空的。</p>
 <p>我以前的理解是，配置就是一份清单，写清楚要装什么、开什么。所以看到空文件，我第一反应是自己找错地方了。</p>
@@ -82,6 +82,12 @@
 <p>我原来的判断：配置就是一个大 YAML。插件的名字、参数、开关全写在一个文件里，我要改什么，就去那个文件里找到对应那一行，改完保存，重启。</p>
 <p>按这个判断，cordis.yml 是空的，那就等于什么都没配。所以我的第一反应是找错路径了，第二反应是这文件没被加载。</p>
 <p>现在的判断：DSH 的配置是一叠补丁。cordis.yml 是这叠补丁最底下那张白纸，产品是从白纸往上叠出来的。我要改的东西，大概率不在这张纸上。</p>
+<h2>读完你能做到</h2>
+<ul>
+<li>用 dump 三连拿到自己那一层的行数差，说清差在哪一块</li>
+<li>在副本档案里加一行插件，验证多出来的正好是这一行，再删掉回滚</li>
+<li>说清 patch 打错 id 为什么静默失效、空 patch 为什么反而启动失败</li>
+</ul>
 <h2>一、那条报错，和 2390 行</h2>
 <p>想动手之前，我决定先看一眼真实的配置树长什么样。</p>
 <p>文档给的命令是 dsh --profile web --dump-config。我没敢直接拿 web 试，因为不确定它会不会顺手给我建一个 profile 目录出来。那就先试我天天在用的 desktop。</p>
@@ -157,6 +163,12 @@
 <p>补充那条命令：dsh --profile paseo --dump-config-schema，输出 907 KB 的 JSON Schema，里面有 112 个定义、197 个 entry、8 条诊断。</p>
 <p>8 条诊断里 4 条是警告，4 条是错误。错误原文是 unrecognized Loader tree carrier，都出在以 /tools 结尾的那几个子路径条目上。</p>
 <p>这 4 条到底是静态投影的局限，还是真会在启动时出问题？官方没说，我也没重启去验。所以这里我只记录，不下结论。要是把它写成&quot;DSH 有个 bug&quot;，大概会是这篇最不负责的一句。</p>
+<h2>落地案例：在副本档案里插一行插件，验完再删</h2>
+<p>场景：你想加一个小插件，又不敢碰每天在用的 desktop。先在一个副本档案里加、验、删，全程不动现有配置，约 30 分钟。</p>
+<p>做法：跑 dsh rescue --from-default-profile web --dump-config 存成 before.txt，它用官方 web 模板建出一份叫 rescue 的副本，现有 profile 一个字没动；再打开 ~/.dsh/profiles/rescue/cordis.patch.yml，写一条 insert，照 dump 抄四行：id 自取、name 写包名、config 原样、disabled 留空。</p>
+<p>验收：再 dump 一次存 after.txt，diff 只多五行，头一行是来源注释，后四行是你那条；把 id 改成不存在的名字重跑，树零变化、stderr 多一行 not found；回滚是删掉这几行，别清空文件——空 patch 会直接启动失败。</p>
+<p>耗时：第一次 40 分钟（含挑包名），之后 8 分钟一次。</p>
+<p>读完这一篇，你应该能在副本档案里加、验、删一条插件，全程不碰桌面版那套配置，也不靠记忆回滚。</p>
 <h2>八、下一篇</h2>
 <p>下一篇往下钻一层：一个 bundle 里面到底装了什么，为什么 base 这一个包就能把模型、工具、持久化、沙箱、设置、凭据、遥测一起带上。</p>
 <p>在那之前，如果你手上也有 DSH，先敲一下 dump-config 数数行数。我那个普通 profile 是 2390 行、197 个条目。</p>
@@ -184,7 +196,7 @@
 <p>本机实测 dsh --profile paseo --dump-config-schema，907 KB，112 个定义、197 个 entry、8 条诊断</p>
 <p>本机文件 ~/.dsh/profiles/desktop/cordis.yml（4 行，内容为空列表）与 cordis.patch.yml（983 行）</p>
 <p>本机文件 desktop/package.json 的 dsh.profile.bundles 数组（12 个 bundle）</p>
-<footer class="doc">版本 v1.1 ｜ 2026-11-08 02:32 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</footer>
+<footer class="doc">版本 v1.2 ｜ 2026-11-08 02:32 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</footer>
 </div>
 </body>
 </html>

@@ -69,11 +69,17 @@
 <header class="doc">
   <div class="kicker">DSH RESEARCH · 2026</div>
   <h1>官方把 Agent 从会话里拿出来了：Super-agent 设计笔记</h1>
-  <div class="meta"><span>版本 v1.1 ｜ 2026-11-08 13:35 (Asia/Shanghai) ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</span></div>
+  <div class="meta"><span>版本 v1.2 ｜ 2026-11-08 13:35 (Asia/Shanghai) ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</span></div>
 </header>
-<blockquote>系列第 25 篇 ｜ 版本 v1.1 ｜ 2026-11-08 ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</blockquote>
+<blockquote>系列第 25 篇 ｜ 版本 v1.2 ｜ 2026-11-08 ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</blockquote>
 <blockquote>学习笔记 ｜ 第 25 站 ｜ 我带着的问题：如果 Agent 已经能自己干活，为什么我们还在一个会话一个会话地伺候它？<br>读之前我以为：Super-agent 就是&quot;更强的模型 + 多开几个 agent&quot;。<br>读完我的一句话答案：它是一套把会话从&quot;工作单元&quot;降级成&quot;实现细节&quot;的系统架构，模型只是其中一个零件。<br>读完我能答出来的三个问题：1 官方说的四个特征是哪四个，为什么单个 ReAct 循环给不了？ 2 Router 和 Worker 各自负责什么，为什么 Worker 不直接对人说话？ 3 实验里&quot;更高产&quot;的代价是什么？（答不出就说明我没学会，这篇先不发）</blockquote>
 <p>先说人话：我原来以为，Agent 的边界就是聊天窗口——一个窗口一件事，事情多了就多开窗口。官方这篇文章说，这个边界是错的：窗口只是你看到的那一层，底下应该是一套能同时接很多活、你在哪儿说话它都在、出事还能自己爬起来的系统。这篇就是我把这套设计读明白的笔记。</p>
+<h2>读完你能做到</h2>
+<ul>
+<li>说出连续、高产、主动、持久这四个特征，并指出每一个为什么单个 ReAct 循环给不了</li>
+<li>说清 Router 和 Worker 各管什么，以及 Worker 为什么不直接对人说话，能举一个反例</li>
+<li>用三个判据判断你的业务要不要常驻 Agent，并写下一句带条件的结论</li>
+</ul>
 <h2>一、我原来的判断</h2>
 <p>我原来的判断：Super-agent 是&quot;模型更强之后自然出现的形态&quot;。模型越会调用工具，Agent 就越自主；自主到一定程度，就成了 Super-agent。所以要等模型，不用改架构。</p>
 <p>现在的判断：模型再强，也改不了三件事——一个 ReAct 循环一次只能走一步；不同任务挤在一个上下文里会互相污染；跑它的那台机器一关，它就停了。这三件事不是模型问题，是系统问题。官方文章开篇就写了：单个 ReAct 循环无法同时提供那四个特征，它们必须来自外围架构。</p>
@@ -127,6 +133,12 @@
 <p>读完这篇，我回头看自己前面写的几篇，有几处需要补一脚：</p>
 <p>第 02 篇说&quot;没有核心的运行时&quot;，官方这篇补了另一半：会话本身也不该是核心，它只是实现细节。第 08 篇讲上下文，这篇给了 Inline &amp; Spill 和召回链两个具体做法。第 11 篇讲事件，这篇把 Trigger、Thread、两阶段过滤、订阅直通讲成了完整链路。第 12 篇讲 turn，这篇的异步 ReAct 正好是 turn 的下一种形态。第 18 篇讲多 agent，这篇把 Router 和 Agent Team 的分工讲清楚了。第 24 篇讲押不押，这篇的实验数字和五个开放问题，是我更新判断的新证据。</p>
 <p>所以我把这篇放在第 25 篇，作为&quot;延伸&quot;的第一篇：前面 24 篇讲的是&quot;现在这个 DSH 怎么跑&quot;，这一篇讲的是&quot;官方认为它接下来该长成什么样&quot;。</p>
+<h2>落地案例：判断你的业务要不要常驻 Agent</h2>
+<p>场景：你想给业务配一个一直在线的 agent，但说不清它比现在的一次性会话多解决什么。</p>
+<p>做法：只回答三个问题。一，你的事有多少是被事件推着走的（邮件、评论、CI 结果、群消息），而不是你去问它。二，断了之后它能不能自己接上，还是要你从头讲一遍。三，同一时间有几件事在并行。</p>
+<p>验收：三个问题里有两个答不上来，就先按一次性会话跑两周，把这两周里&quot;本来该它接&quot;的事件记成一张清单，再回来看这三个问题。清单少于十条，就别上常驻。</p>
+<p>耗时：判断三十分钟，验证两周。</p>
+<p>读完这一篇，你应该能说清你的业务该配一个常驻 Agent，还是继续用一次性会话。</p>
 <h2>术语小抄</h2>
 <ul>
 <li>Super-agent：把 Agent 从单个会话里解耦出来、能跨会话连续工作的系统形态。</li>
@@ -155,7 +167,7 @@
 <li>工程实践视角（Router/Worker 与自带工具团队）— https://x.com/canghe/status/2117876700101189638</li>
 <li>本系列第 02、08、11、12、18、22、24 篇的相关段落（互相引用）</li>
 </ul>
-<footer class="doc">版本 v1.1 ｜ 2026-11-08 13:35 (Asia/Shanghai) ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</footer>
+<footer class="doc">版本 v1.2 ｜ 2026-11-08 13:35 (Asia/Shanghai) ｜ 依据：官方《Super-agent 设计探索》（2026-10-31）+ dsh-superagent-prototype + 本机 dsh 0.2.2-rc.1 实测</footer>
 </div>
 </body>
 </html>
