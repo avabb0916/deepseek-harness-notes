@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>系列总提纲 v2.0（调整版）</title>
+<style>
+  :root {
+    --ink:#1b1a17; --muted:#6d685f; --line:#ddd7c9; --paper:#fbf9f3;
+    --accent:#b23a2a; --accent2:#1f4e5f; --code:#f2eee4; --hl:#f7efe2;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:ui-serif,"Songti SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.78; font-size:16.5px; }
+  .page { max-width:1080px; margin:0 auto; padding:48px 40px 72px; }
+  header.doc { border-bottom:3px solid var(--ink); padding-bottom:22px; margin-bottom:36px; }
+  .kicker { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+    font-weight:700; }
+  h1 { font-size:34px; line-height:1.28; margin:10px 0 14px; letter-spacing:-.01em; }
+  .meta { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:13px; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap; }
+  h2 { font-size:23px; margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line); }
+  h3 { font-size:18.5px; margin:28px 0 10px; color:var(--accent2); }
+  h4 { font-size:16px; margin:22px 0 8px; }
+  p { margin:0 0 14px; }
+  ul,ol { margin:0 0 16px; padding-left:24px; }
+  li { margin:5px 0; }
+  blockquote { margin:18px 0; padding:14px 18px; background:var(--hl);
+    border-left:4px solid var(--accent); color:#3f3a33; }
+  blockquote p { margin:0; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em;
+    background:var(--code); padding:1px 5px; border-radius:4px; }
+  pre.code { background:#22201d; color:#f4efe6; padding:16px 18px; border-radius:8px;
+    overflow:auto; font-size:13.5px; line-height:1.6; margin:16px 0; }
+  pre.code code { background:none; padding:0; color:inherit; }
+  .table-wrap { overflow-x:auto; margin:18px 0 22px; border:1px solid var(--line); border-radius:8px; }
+  table { width:100%; border-collapse:collapse; font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:14px; background:#fff; }
+  th { background:#f0ebdf; text-align:left; padding:10px 12px; border-bottom:2px solid var(--line);
+    font-weight:700; white-space:nowrap; }
+  td { padding:10px 12px; border-bottom:1px solid #eee7d9; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  hr { border:none; border-top:1px dashed var(--line); margin:30px 0; }
+  figure.fig { margin:22px 0 26px; text-align:center; }
+  figure.fig img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  figcaption { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12.5px; color:var(--muted); margin-top:8px; }
+  img.inline-img { max-width:100%; height:auto; }
+  .img-missing { margin:18px 0; padding:14px 16px; background:#fdf0ee; border:1px dashed var(--accent);
+    border-radius:6px; font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--accent); }
+  a { color:var(--accent2); text-decoration:underline; text-underline-offset:3px; }
+  footer.doc { margin-top:56px; padding-top:18px; border-top:3px solid var(--ink);
+    font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif; font-size:12.5px; color:var(--muted); }
+  @media print {
+    body { background:#fff; font-size:12.5pt; }
+    .page { max-width:none; padding:0; }
+    h2 { page-break-after:avoid; }
+    tr,li,blockquote,figure.fig { page-break-inside:avoid; }
+    figure.fig img { max-width:100%; }
+    .table-wrap { overflow:visible; }
+    a { color:inherit; text-decoration:none; }
+  }
+</style>
+</head>
+<body><div style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>
+<div class="page">
+<header class="doc">
+  <div class="kicker">DSH SERIES · 总提纲</div>
+  <h1>系列总提纲 v2.0（调整版）</h1>
+  <div class="meta"><span>版本 v2.0 ｜ 2026-11-08 15:35 (Asia/Shanghai) ｜ 依据：27 篇成稿 + OPT 团队搭建方向 + 案例路线</span></div>
+</header>
+<blockquote>这一版最大的调整：<strong>从&quot;24 篇 DSH 原理&quot;扩成&quot;原理 + 方法 + 案例&quot;三段式</strong>；案例只做网站出海一个完整闭环，用来验证 OPT 团队搭建；其他行业放到迁移篇，不铺开。</blockquote>
+<h2>一、这本书的定位（一句话）</h2>
+<p><strong>用 DeepSeek Harness 当基座，教一个人搭出一支能替团队干活的 OPT；第一版用「网站出海」跑通全流程，方法可迁移。</strong></p>
+<p>三个问题：它是什么？能帮你做什么？怎么用到你的业务里？</p>
+<h2>二、结构调整（和 v1.0 比）</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>项</th>
+<th>v1.0</th>
+<th>v2.0（本版）</th>
+</tr></thead><tbody>
+<tr><td>主线</td><td>24 篇 DSH 原理</td><td>原理 24 篇 + 方法 3 篇 + 案例 8 篇</td></tr>
+<tr><td>Super-agent</td><td>未收录</td><td>25 篇（官方设计精读）</td></tr>
+<tr><td>用途</td><td>散在各篇</td><td>26 篇（七种用法）</td></tr>
+<tr><td>迁移</td><td>无</td><td>27 篇（五步迁移法）</td></tr>
+<tr><td>案例</td><td>计划 6 个行业</td><td>只做网站出海 1 个完整案例（28—33），迁移演练 33</td></tr>
+<tr><td>OPT 团队</td><td>只在方向文档</td><td>28—32 用真实数据验证产能账</td></tr>
+<tr><td>产品化</td><td>无</td><td>34—35（插件化、成熟度路线）</td></tr>
+</tbody></table></div>
+<h2>三、总目录（35 篇：27 成稿 + 8 在写/规划）</h2>
+<h3>第一部分 原理：它是什么、怎么跑</h3>
+<blockquote>知道 DSH 是什么、怎么装、怎么跑、边界在哪</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>01</td><td>我本来准备装两天就卸载 DeepSeek Harness</td><td>3,983 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>02</td><td>一个没有核心的 Agent 运行时</td><td>4,720 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>03</td><td>翻完 vendor 目录，我收回“抄 Claude Code”这句话</td><td>4,639 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>04</td><td>装 DSH 有三条路，选错那条会浪费你一周</td><td>4,056 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>05</td><td>为什么它总要问你&quot;用哪个目录&quot;</td><td>3,655 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>06</td><td>我烧了 93 亿 token，只有 0.3% 是它生成的</td><td>3,709 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>07</td><td>它没有变强，是有人给了它一张清单</td><td>3,801 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>08</td><td>上下文不是聊天记录：我拆开了自己的会话日志</td><td>4,204 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第二部分 设计：为什么这样设计</h3>
+<blockquote>理解插件、接缝、事件、turn、提示词的设计取舍</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>09</td><td>为什么 DSH 敢让你中途卸掉一个插件</td><td>4,560 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>10</td><td>一个接口，换掉整个产品</td><td>4,711 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>11</td><td>三种事件：DSH 把&quot;发生了什么&quot;分成了三个世界</td><td>3,934 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>12</td><td>一次 turn 的完整旅程</td><td>3,729 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>13</td><td>系统提示不是一段文本，是一张拼出来的清单</td><td>3,725 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第三部分 架构：我能改哪里</h3>
+<blockquote>看懂配置树、两半结构、日志、安全、多 agent</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>14</td><td>我打开配置文件，里面只有两个方括号</td><td>3,793 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>15</td><td>两半结构：host 与 client，没有第三半</td><td>3,804 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>16</td><td>会话日志不是聊天记录，是一本只追加的账</td><td>4,279 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>17</td><td>一个 9.4 分的洞，和一次 400GB 的删除</td><td>4,788 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>18</td><td>我让 8 个 agent 并行写稿，崩的不是模型是文件</td><td>4,586 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第四部分 建设者：写出自己的</h3>
+<blockquote>从第一个插件到带界面的工作台，知道什么该插件化</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>19</td><td>我写第一个 DSH 插件：注册成功了，模型却用不了</td><td>5,404 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>20</td><td>我的插件只有一半：另一半跑在浏览器里</td><td>4,917 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>21</td><td>这个系列是这个插件管的，它返工了三次</td><td>4,972 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>22</td><td>什么该做成插件，什么不该</td><td>3,593 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第五部分 判断：押不押</h3>
+<blockquote>和别家什么关系，为什么还在用</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>23</td><td>DSH、Claude Code、Codex：三种 Agent 形态，不是三个竞品</td><td>3,970 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>24</td><td>37 个版本，0 个正式版，我还在用它</td><td>3,792 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第六部分 方法与用途：能做什么、怎么搬</h3>
+<blockquote>Super-agent 设计、七种用法、五步迁移法</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>25</td><td>官方把 Agent 从会话里拿出来了：Super-agent 设计笔记</td><td>3,401 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>26</td><td>我能用 DSH 做什么：七种用法，三种我真试过</td><td>2,053 字</td><td>已成稿 v1.1</td></tr>
+<tr><td>27</td><td>五步迁移法：把这套方法搬到任何业务</td><td>2,139 字</td><td>已成稿 v1.1</td></tr>
+</tbody></table></div>
+<h3>第七部分 案例：网站出海 OPT（在写）</h3>
+<blockquote>用 7 天闭环一个站，验证产能、角色、闸门、复用</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>28</td><td>7 天闭环一个站：从选词到上线</td><td>待写</td><td>上线站 + 日志 + 每日记录</td></tr>
+<tr><td>29</td><td>46 个原子怎么落地：角色卡、写域、闸门</td><td>待写</td><td>角色卡 + 任务板 + 闸门脚本</td></tr>
+<tr><td>30</td><td>产能账：92 人时到 15 人时的真相</td><td>待写</td><td>人时表 + 成本表 + 返工表</td></tr>
+<tr><td>31</td><td>崩掉的三个环节：失败复盘</td><td>待写</td><td>事故记录 + 修复前后对比</td></tr>
+<tr><td>32</td><td>第二站：复用率 60% 从哪来</td><td>待写</td><td>两站人时对比 + 复用清单</td></tr>
+<tr><td>33</td><td>换业务演练：内容获客与家长辅导</td><td>待写</td><td>两份五步拆解 + 差异清单</td></tr>
+</tbody></table></div>
+<h3>第八部分 迁移与产品化（规划）</h3>
+<blockquote>从原子到插件，从 L1 到 L3 的 90 天</blockquote>
+<div class="table-wrap"><table><thead><tr>
+<th>#</th>
+<th>标题</th>
+<th>字数/状态</th>
+<th>说明</th>
+</tr></thead><tbody>
+<tr><td>34</td><td>从原子到插件：把跑通的做成工具</td><td>待写</td><td>插件清单 + 注册记录</td></tr>
+<tr><td>35</td><td>OPT 成熟度：L1 到 L3 的 90 天</td><td>待写</td><td>90 天计划 + 阶段验收</td></tr>
+</tbody></table></div>
+<h2>四、重点调整：新增的 8 篇</h2>
+<h3>案例（28—33）：网站出海 OPT</h3>
+<p>这六篇不是&quot;网站出海教程&quot;，是<strong>用网站出海验证 OPT 团队</strong>：</p>
+<ul>
+<li>28 7 天闭环：每天做了什么、卡在哪、砍了什么；</li>
+<li>29 46 个原子落地：角色卡、写域、闸门长什么样；</li>
+<li>30 产能账：人时、成本、返工的真实数字（校准 92h→15h）；</li>
+<li>31 失败复盘：三个崩掉的环节和修法；</li>
+<li>32 第二站复用：60% 复用从哪来；</li>
+<li>33 换业务演练：内容获客、家长辅导，只换名词不换零件。</li>
+</ul>
+<h3>方法（34—35）</h3>
+<ul>
+<li>34 从原子到插件：哪些原子值得固化成 DSH 插件；</li>
+<li>35 OPT 成熟度：L1→L3 的 90 天路线与四张账。</li>
+</ul>
+<h2>五、写作与发布顺序</h2>
+<ol>
+<li><strong>先写 28—30</strong>（跑通一个站 + 原子落地 + 产能账），因为案例要有真实数字。</li>
+<li>再写 31—33（失败、复用、迁移）。</li>
+<li>最后 34—35（产品化与方法收口）。</li>
+<li>发布顺序不变：01→27 按周发，案例边跑边发；第 28 篇作为&quot;案例季&quot;开篇。</li>
+</ol>
+<h2>六、已知问题（这版没解决）</h2>
+<ul>
+<li>26、27 两篇偏短（约 2,000 字），需要扩到 3,500 字以上；</li>
+<li>事实核查只覆盖 01—13，14—27 未核查；</li>
+<li>案例数字要等第一站跑完才能填，现在只能写&quot;待填&quot;；</li>
+<li>35 篇之后是否再扩行业，等第一版跑通再定。</li>
+</ul>
+<h2>变更记录</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>版本</th>
+<th>时间</th>
+<th>变更</th>
+</tr></thead><tbody>
+<tr><td>v1.0</td><td>2026-11-08 03:00</td><td>24 篇提纲</td></tr>
+<tr><td>v2.0</td><td>2026-11-08 15:35</td><td>扩为 35 篇：原理 24 + 方法 3 + 案例 8；明确 OPT 主线，案例只做网站出海</td></tr>
+</tbody></table></div>
+<footer class="doc">版本 v2.0 ｜ 2026-11-08 15:35 (Asia/Shanghai) ｜ 依据：27 篇成稿 + OPT 团队搭建方向 + 案例路线</footer>
+</div>
+</body>
+</html>

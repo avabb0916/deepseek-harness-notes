@@ -72,6 +72,14 @@ def main():
         html = (DOCS / 'cases.html').read_text(encoding='utf-8')
         html = html.replace('<body>', '<body><div class="booknav" style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>', 1)
         (DOCS / 'cases.html').write_text(html, encoding='utf-8')
+    # 总提纲
+    outline_md = SERIES / '02-提纲' / '系列总提纲-v2.0-20261108-1535.md'
+    if outline_md.exists():
+        subprocess.run([sys.executable, str(CONV), str(outline_md), str(DOCS / 'outline.html')],
+                       check=True, stdout=subprocess.DEVNULL)
+        html = (DOCS / 'outline.html').read_text(encoding='utf-8')
+        html = html.replace('<body>', '<body><div style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>', 1)
+        (DOCS / 'outline.html').write_text(html, encoding='utf-8')
     # 图片
     ov = Path(__file__).resolve().parent / 'assets' / 'overview.png'
     if ov.exists():
@@ -117,8 +125,10 @@ footer{{margin-top:56px;padding-top:18px;border-top:3px solid var(--ink);font-fa
 3. 每篇文末有「术语小抄」和「我还没搞懂」，看不懂术语先看小抄。</p>
 <h2>目录（27 篇）</h2>
 <ul class="toc">{toc}</ul>
+<h2>总提纲与案例</h2>
+<p>全书的调整版提纲（35 篇：27 已成稿 + 8 在写）：<a href="outline.html">系列总提纲 v2.0</a>。</p>
 <h2>第二批：案例（在写）</h2>
-<p>24 篇讲机制，第二批讲"用它做成了什么"。六个案例的路线图：<a href="cases.html">案例篇路线图</a>。</p>
+<p>27 篇讲机制与方法，第二批讲"用它做成了什么"。六个案例的路线图：<a href="cases.html">案例篇路线图</a>。</p>
 <h2>配图</h2>
 <p>全部配图为手绘白底风格，可单独保存使用（19 张）。</p>
 <div class="gallery">{gallery}</div>
