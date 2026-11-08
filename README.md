@@ -11,7 +11,7 @@
 
 ## 在线阅读
 
-GitHub Pages 部署后：`https://<你的用户名>.github.io/<仓库名>/`
+在线阅读：**https://avabb0916.github.io/deepseek-harness-notes/**
 
 本地看：直接双击 `docs/index.html`（全部自包含，离线可读）。
 
@@ -29,6 +29,15 @@ GitHub Pages 部署后：`https://<你的用户名>.github.io/<仓库名>/`
 另有 [7 天学习 + 14 天发布计划](docs/plan.html) 与 19 张手绘配图（`docs/images/`）。
 
 ## 部署到 GitHub Pages
+
+仓库已部署到 GitHub Pages（`main` 分支 `/docs`）。要再推一次：
+
+```bash
+cd dsh-book
+git add -A && git commit -m "更新笔记" && git push
+```
+
+如需从头重建仓库：
 
 ```bash
 # 在 GitHub 新建一个公开仓库（不要勾选初始化 README）
