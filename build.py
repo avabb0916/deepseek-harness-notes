@@ -105,6 +105,7 @@ footer{{margin-top:56px;padding-top:18px;border-top:3px solid var(--ink);font-fa
 <div class="kicker">DSH · 学习笔记</div>
 <h1>一切皆插件<br>我的 DeepSeek Harness 学习笔记</h1>
 <div class="meta">24 篇 ｜ 版本 v1.0 ｜ 2026-11-08 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 官方文档 + X/社区资料</div>
+<img src="images/00-全景图.png" alt="教程全景图" style="width:100%;height:auto;margin:26px 0 6px;border:1px solid var(--line);border-radius:10px">
 <blockquote>这不是教程，是我从 0 到 1 学 DeepSeek Harness 的笔记。我先学会，才发出来；看不懂的地方，我写"我还没搞懂"。</blockquote>
 <h2>怎么用这本笔记</h2>
 <p>1. 从第 01 篇开始读，每篇顶部有「我带着的问题」和「读完能答的三个问题」；答不出，就回去重读那一节。<br>

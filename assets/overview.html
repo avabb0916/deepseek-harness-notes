@@ -1,0 +1,105 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  :root{--ink:#1b1a17;--muted:#6d685f;--line:#ddd7c9;--paper:#fbf9f3;--accent:#b23a2a;--teal:#1f4e5f;--soft:#f3ecdd}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1600px;height:1120px;background:var(--paper);color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB",-apple-system,sans-serif;overflow:hidden}
+  .wrap{padding:54px 70px 40px;height:100%;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--ink);padding-bottom:24px}
+  .kicker{font-size:14px;letter-spacing:.22em;color:var(--accent);font-weight:700}
+  h1{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:66px;line-height:1.08;margin-top:10px;letter-spacing:.01em}
+  h1 small{display:block;font-size:31px;font-weight:400;color:var(--teal);margin-top:12px;letter-spacing:.02em}
+  .stats{display:grid;grid-template-columns:repeat(2,150px);gap:12px 16px;margin-top:6px}
+  .stat{border-left:2px solid var(--accent);padding-left:12px}
+  .stat b{font-family:"Songti SC",serif;font-size:34px;display:block;line-height:1.1}
+  .stat span{font-size:13px;color:var(--muted)}
+  .journey{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;color:var(--muted)}
+.journey b{color:var(--accent);font-weight:600}
+.journey .sep{color:var(--line)}
+.flow{display:flex;gap:10px;margin-top:18px;align-items:stretch}
+  .act{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 15px 14px;position:relative;display:flex;flex-direction:column}
+  .act:after{content:"→";position:absolute;right:-13px;top:16px;color:var(--line);font-size:18px}
+  .act:last-child:after{content:""}
+  .no{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+  .act h3{font-size:19px;margin:5px 0 3px}
+  .act p{font-size:12.5px;color:var(--muted);line-height:1.5;min-height:38px}
+  .chips{margin-top:8px;display:flex;flex-direction:column;gap:5px}
+  .chip{font-size:13px;line-height:1.35;padding:5px 8px;background:var(--soft);border-radius:5px}
+  .chip b{color:var(--accent);font-weight:700;margin-right:5px;font-family:"Songti SC",serif}
+  .days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:26px}
+.day{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 10px 9px}
+.day b{display:block;font-size:12px;color:var(--accent);letter-spacing:.06em}
+.day span{display:block;font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:3px}
+.days-title{font-size:13px;color:var(--teal);letter-spacing:.08em;margin-top:26px;font-weight:600}
+.bottom{display:grid;grid-template-columns:1.05fr 1.05fr .9fr;gap:18px;margin-top:22px}
+  .box{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 20px}
+  .box h4{font-size:15px;letter-spacing:.06em;color:var(--teal);margin-bottom:10px}
+  .box li{list-style:none;font-size:13.5px;line-height:1.65;margin:5px 0;padding-left:16px;position:relative}
+  .box li:before{content:"·";position:absolute;left:4px;color:var(--accent);font-weight:700}
+  .box p{font-size:13.5px;line-height:1.7;color:#2e2b27}
+  .who{display:grid;grid-template-columns:1.1fr 1.1fr 1fr;gap:18px;margin-top:22px;border-top:1px solid var(--line);padding-top:20px}
+.who h5{font-size:13px;letter-spacing:.08em;color:var(--accent);margin-bottom:8px}
+.who p,.who li{font-size:13px;line-height:1.65;color:#2e2b27}
+.who li{list-style:none;margin:3px 0;padding-left:14px;position:relative}
+.who li:before{content:"·";position:absolute;left:3px;color:var(--teal);font-weight:700}
+.foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)}
+  .tag{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-right:8px;color:var(--muted)}
+</style></head><body><div class="wrap">
+<div class="top">
+  <div>
+    <div class="kicker">DEEPSEEK HARNESS · 学习笔记 · 2026</div>
+    <h1>一切皆插件<small>从 0 到 1 学 DeepSeek Harness</small></h1>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>24</b><span>篇学习笔记</span></div>
+    <div class="stat"><b>10 万</b><span>字 · 每篇约 4000 字</span></div>
+    <div class="stat"><b>19</b><span>张手绘配图</span></div>
+    <div class="stat"><b>0</b><span>死链 · 50 条来源实测</span></div>
+  </div>
+</div>
+<div class="journey"><b>一个读者的变化</b><span>好奇</span><span class="sep">→</span><span>装好</span><span class="sep">→</span><span>日用</span><span class="sep">→</span><span>看懂</span><span class="sep">→</span><span>能改</span><span class="sep">→</span><span>有判断</span><span style="margin-left:auto">按顺序读，不用跳</span></div>
+<div class="flow">
+  <div class="act"><div class="no">ACT 01 · 起点</div><h3>为什么值得学</h3><p>先看一个普通使用者怎么被它拽回来</p><div class="chips">
+    <div class="chip"><b>01</b>我为什么搬进来</div><div class="chip"><b>02</b>没有核心的运行时</div><div class="chip"><b>03</b>前世今生</div></div></div>
+  <div class="act"><div class="no">ACT 02 · 上手</div><h3>装好，跑起来</h3><p>三种装法、会话目录、模型成本、工具与上下文</p><div class="chips">
+    <div class="chip"><b>04</b>三种装法</div><div class="chip"><b>05</b>会话与目录</div><div class="chip"><b>06</b>模型与成本</div><div class="chip"><b>07</b>工具系统</div><div class="chip"><b>08</b>上下文不是聊天记录</div></div></div>
+  <div class="act"><div class="no">ACT 03 · 设计原理</div><h3>为什么这样设计</h3><p>插件、接缝、事件、回合、提示词</p><div class="chips">
+    <div class="chip"><b>09</b>一切皆插件</div><div class="chip"><b>10</b>接缝</div><div class="chip"><b>11</b>事件三分</div><div class="chip"><b>12</b>一次 turn</div><div class="chip"><b>13</b>系统提示</div></div></div>
+  <div class="act"><div class="no">ACT 04 · 底层架构</div><h3>我能改哪里</h3><p>配置树、两半结构、日志、安全、多 agent</p><div class="chips">
+    <div class="chip"><b>14</b>profile 与 bundle</div><div class="chip"><b>15</b>两半结构</div><div class="chip"><b>16</b>会话存储</div><div class="chip"><b>17</b>安全</div><div class="chip"><b>18</b>多 agent</div></div></div>
+  <div class="act"><div class="no">ACT 05 · 建设者</div><h3>写出自己的</h3><p>从 40 行插件到带界面的工作台</p><div class="chips">
+    <div class="chip"><b>19</b>第一个插件</div><div class="chip"><b>20</b>插件界面</div><div class="chip"><b>21</b>研究台全过程</div><div class="chip"><b>22</b>什么该插件化</div></div></div>
+  <div class="act"><div class="no">ACT 06 · 判断</div><h3>押不押</h3><p>和别家什么关系，我为什么还在用</p><div class="chips">
+    <div class="chip"><b>23</b>三种 Agent 形态</div><div class="chip"><b>24</b>一年后回看</div></div></div>
+</div>
+<div class="days-title">7 天学习路线 · 每天读 2—4 篇 + 动手做 1 件真实小事</div>
+<div class="days">
+  <div class="day"><b>DAY 1</b><span>装好 + 跑通<br>04 · 05</span></div>
+  <div class="day"><b>DAY 2</b><span>模型与工具<br>06 · 07</span></div>
+  <div class="day"><b>DAY 3</b><span>上下文与存储<br>08 · 16</span></div>
+  <div class="day"><b>DAY 4</b><span>插件与接缝<br>09 · 10</span></div>
+  <div class="day"><b>DAY 5</b><span>事件与回合<br>11 · 12 · 13</span></div>
+  <div class="day"><b>DAY 6</b><span>结构与安全<br>14 · 15 · 17 · 18</span></div>
+  <div class="day"><b>DAY 7</b><span>实战与判断<br>19 — 24</span></div>
+</div>
+<div class="bottom">
+  <div class="box"><h4>怎么读这本笔记</h4><ul>
+    <li>从 01 开始；每篇顶部有「我带着的问题」和「读完能答的三个问题」</li>
+    <li>答不出就回去重读那一节——答不出说明我没学会，不发</li>
+    <li>照 7 天学习计划，每天读 2—4 篇 + 动手做 1 件真实小事</li>
+  </ul></div>
+  <div class="box"><h4>凭什么说它靠谱</h4><ul>
+    <li>每条结论带源码路径 / 命令输出 / 日志数字，能复核</li>
+    <li>每篇三样固定内核：判断演化、一手细节、承认错误或边界</li>
+    <li>基于 developer preview，版本锚定 <b>dsh 0.2.2-rc.1</b>，过时了会标出来</li>
+  </ul></div>
+  <div class="box"><h4>这不是教程</h4><p>这是一个还在学的人留下的路标：我先学会，才发出来；看不懂的地方，我写「我还没搞懂」。</p>
+  <p style="margin-top:10px"><span class="tag">学习笔记</span><span class="tag">全部可复核</span><span class="tag">持续迭代</span></p></div>
+</div>
+<div class="who">
+  <div><h5>适合谁</h5><ul><li>用 Claude Code / Cursor，想知道差在哪</li><li>装了 DSH，但卡在配置、插件、上下文</li><li>想写插件，或想把它接进自己的工作流</li></ul></div>
+  <div><h5>不适合谁</h5><ul><li>想找一篇官方文档翻译的人</li><li>想找「最强 Agent 排行榜」的人</li><li>指望它承诺收益的人</li></ul></div>
+  <div><h5>你会得到什么</h5><p>一套能自己复现的判断：它是什么、怎么跑、哪里能改、什么时候别用。</p></div>
+</div>
+<div class="foot"><span>github.com/avabb0916/deepseek-harness-notes</span><span>avabb0916.github.io/deepseek-harness-notes</span><span>v1.0 ｜ 2026-11-08</span></div>
+</div></body></html>
