@@ -141,6 +141,7 @@
 <p>一是 agent/pre-step 的改写能力，我只读了文档和名单，没实测过，见上文。</p>
 <p>二是并发下的顺序。我那份日志有 193 轮，但里面还有 subagent/catalog 14 条、team/task 5 条，说明有子代理和团队任务在交错。seq 是全局单调的，所以&quot;总顺序&quot;没问题；但&quot;哪个 agent 的哪一步&quot;要靠 data 里的 turn 和 step 去读，不是靠 seq。多 agent 并行时，这个阅读成本会明显上升，我还没有一份足够复杂的样本来验证这件事到底有多乱。</p>
 <p>三是官方文档自身有小不一致：agent/request 在架构文档里被列为 waterfall，但事件矩阵把它放在&quot;未在包内声明&quot;的那张表里；telemetry/ 是族名而实际事件叫 session-telemetry/record。这类不一致不影响理解，但你写代码时要以矩阵为准。</p>
+<p>官方的 Super-agent 设计把同一套思路用到了系统层：程序先做快路径过滤，模型再做慢路径判断；已经分配任务的 Thread，后续事件由代码直接透传给订阅它的 Worker，不再经过 Router。事件驱动怎么落地，第 25 篇有完整链路。</p>
 <h2>下一篇</h2>
 <p>下一篇我想拆&quot;一轮到底是怎么跑的&quot;：turn 和 step 到底谁包含谁、一步里模型和工具各占多少时间。手上这份日志正好够用——193 轮、2,312 步，平均每轮 12 步，这个比例本身就说明了不少事。</p>
 <p>你有没有在 waterfall 里忘过 next()？那种&quot;什么都没报错但就是不工作&quot;的时刻，后来是怎么查出来的？留言说说，我下一篇会挑几个典型的贴出来。</p>
@@ -164,6 +165,9 @@
 <p>持久化目录（agent/inbox/spliced 标为 log-only 及其注释）— https://raw.githubusercontent.com/deepseek-ai/deepseek-harness/master/docs/persistence-catalog.md</p>
 <p>本机会话日志实测（19,379 条事件 / 46 种类型 / 6.52 天；路径为本机 DSH 会话目录下的一份 session.v4.jsonl.zstd，具体路径略）</p>
 <p>本机配置文件树 dump（确认 agent preset 与事件注册树）— dsh --profile web --dump-config</p>
+<ul>
+<li>本系列第 25 篇《官方把 Agent 从会话里拿出来了：Super-agent 设计笔记》— https://x.com/DeepSeekHarness/status/2116857257245987236</li>
+</ul>
 <footer class="doc">版本 v1.1 ｜ 2026-11-08 02:38 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</footer>
 </div>
 </body>

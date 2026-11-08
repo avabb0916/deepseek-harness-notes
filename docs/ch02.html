@@ -162,6 +162,7 @@
 <p>只加一个新工具、加一个界面面板，是在旁边挂一个，成本一次性。要改已有的核心行为，我就进入了 wren6991 那种状态：每个上游版本跟一次。这不是某一家的坑，是这套架构的定价方式。</p>
 <p>第三，读别人的配置，我先看来源标注。</p>
 <p>29 处 # == 就是一张归属表，能回答三个问题：这一行是谁给的、被谁改过、我自己的改动落在哪一层。想给别人复现问题，我会先贴这张表，比贴一整段配置有用。</p>
+<p>官方在 2026-10-31 的《Super-agent 设计探索》里把这件事又往前推了一步：不只是&quot;没有核心&quot;，连会话本身也不该是核心。Router 只负责接人和分派，Worker 才执行，用户面对的始终是同一个 Agent。这篇后面我会专门写（第 25 篇）。</p>
 <h2>九、下一篇</h2>
 <p>这一篇只回答了它是什么形状，还没回答为什么会长成这个形状。</p>
 <p>下一篇写它的谱系：形态被 Claude Code 验证过，骨架来自 Cordis 那个小框架和一篇讲时空可组合性的论文，成本优势来自它自己家的模型。三条线拧在一起，才解释得清为什么是 2026 年、为什么是 DeepSeek 做出这个东西。</p>
@@ -194,6 +195,7 @@
 <li>本机实测（dsh 0.2.2-rc.1，2026-11-08）：dsh --profile paseo --dump-config 共 2390 行、197 个条目、29 处 # == 来源标注；--dump-default-config 1243 行</li>
 <li>Hacker News 评论（wren6991，2026-10-02，item 49929489）：25 个下游 commit、0 个新插件 — https://news.ycombinator.com/item?id=49929489</li>
 <li>上游框架 Cordis 与论文 — https://github.com/cordiverse/cordis ｜ https://arxiv.org/abs/2608.25512</li>
+<li>本系列第 25 篇《官方把 Agent 从会话里拿出来了：Super-agent 设计笔记》— https://x.com/DeepSeekHarness/status/2116857257245987236</li>
 </ul>
 <footer class="doc">版本 v1.1 ｜ 2026-11-08 02:41 (Asia/Shanghai) ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 系列资料（官方文档/X 与社区/架构实读）</footer>
 </div>

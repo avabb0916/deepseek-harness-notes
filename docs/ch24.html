@@ -64,7 +64,7 @@
   }
 </style>
 <style>.booknav{max-width:1080px;margin:0 auto;padding:14px 40px;display:flex;justify-content:space-between;gap:16px;font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;font-size:13px;border-bottom:1px solid #ddd7c9;color:#6d685f}.booknav a{color:#1f4e5f;text-decoration:none}.booknav a:hover{text-decoration:underline}@media print{.booknav{display:none}}</style></head>
-<body><div class="booknav"><a href="ch23.html">← 23 DSH、Claude Code、Codex：三种 Agent 形态，不是三个竞品</a><a href="index.html">目录</a><span></span></div>
+<body><div class="booknav"><a href="ch23.html">← 23 DSH、Claude Code、Codex：三种 Agent 形态，不是三个竞品</a><a href="index.html">目录</a><a href="ch25.html">25 官方把 Agent 从会话里拿出来了：Super-agent 设计笔记 →</a></div>
 <div class="page">
 <header class="doc">
   <div class="kicker">DSH RESEARCH · 2026</div>
@@ -141,6 +141,7 @@
 <p>第一，我的样本只有一台机器。182 个会话、93.69 亿 token、97 个模型条目，全是我这一台。别人怎么用，我不知道。</p>
 <p>第二，三个信号是我自己定的，不是行业标准。换一个人可能盯另外三件事，也完全说得通。</p>
 <p>第三，也是最要紧的：这套框架只适用于&quot;要不要押一个早期基础设施&quot;。它不适用于&quot;我要选一个下周就上生产的东西&quot;。后者我会去看 SLA、看有没有人兜底，而不是看三个信号。</p>
+<p>补一条 2026-10-31 的官方文章：他们给了 Super-agent 的实验数字——任务完成时间中位数 12.4 分钟对单会话的 20.4 分钟，但每轮缓存读 token 是 2320 万对 610 万；还列了五个开放问题。这是我更新&quot;押不押&quot;判断的新证据，见第 25 篇。</p>
 <h2>八、系列写完了</h2>
 <p>24 篇，从&quot;我本来准备装两天就卸载&quot;写到这篇。</p>
 <p>最后说一句实话：这个系列不是 DSH 的说明书。它是我把一台机器拆开、又装回去的过程记录。里面所有结论都可能在明年被推翻——如果它真的发布了 1.0，如果那些插件接口真的冻结了，我上面一半的判断就得改。</p>
@@ -168,6 +169,9 @@
 <p>本系列第 06 篇 · 模型与凭据（93.69 亿 token 的算法与折算）<br>dsh-series/03-文章/06-模型与凭据.md</p>
 <p>本系列第 17 篇 · 安全（CVE 与 400GB 事故的完整时间线）<br>dsh-series/03-文章/17-安全-CVE与400GB误删.md</p>
 <p>本系列资料 · X 平台与社区讨论（三组冲突与插件数量四口径）<br>dsh-series/01-资料/02-X平台与社区讨论.md</p>
+<ul>
+<li>本系列第 25 篇《官方把 Agent 从会话里拿出来了：Super-agent 设计笔记》— https://x.com/DeepSeekHarness/status/2116857257245987236</li>
+</ul>
 <footer class="doc">版本 v1.1 ｜ 时间待补 (Asia/Shanghai) ｜ 依据：官方仓库 docs + 本机 dsh 实测</footer>
 </div>
 </body>

@@ -107,14 +107,14 @@ footer{{margin-top:56px;padding-top:18px;border-top:3px solid var(--ink);font-fa
 </style></head><body><div class="page">
 <div class="kicker">DSH · 学习笔记</div>
 <h1>一切皆插件<br>我的 DeepSeek Harness 学习笔记</h1>
-<div class="meta">24 篇 ｜ 版本 v1.0 ｜ 2026-11-08 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 官方文档 + X/社区资料</div>
+<div class="meta">24 篇 ｜ 版本 v1.1 ｜ 2026-11-08 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 官方文档 + X/社区资料</div>
 <img src="images/00-全景图.png" alt="教程全景图" style="width:100%;height:auto;margin:26px 0 6px;border:1px solid var(--line);border-radius:10px">
 <blockquote>这不是教程，是我从 0 到 1 学 DeepSeek Harness 的笔记。我先学会，才发出来；看不懂的地方，我写"我还没搞懂"。</blockquote>
 <h2>怎么用这本笔记</h2>
 <p>1. 从第 01 篇开始读，每篇顶部有「我带着的问题」和「读完能答的三个问题」；答不出，就回去重读那一节。<br>
 2. 想动手的，按 <a href="plan.html">7 天学习 + 14 天发布计划</a> 每天读 2—4 篇 + 做 1 件小事。<br>
 3. 每篇文末有「术语小抄」和「我还没搞懂」，看不懂术语先看小抄。</p>
-<h2>目录（24 篇）</h2>
+<h2>目录（25 篇）</h2>
 <ul class="toc">{toc}</ul>
 <h2>第二批：案例（在写）</h2>
 <p>24 篇讲机制，第二批讲"用它做成了什么"。六个案例的路线图：<a href="cases.html">案例篇路线图</a>。</p>
