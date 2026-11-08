@@ -73,6 +73,9 @@ def main():
         html = html.replace('<body>', '<body><div class="booknav" style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>', 1)
         (DOCS / 'cases.html').write_text(html, encoding='utf-8')
     # 图片
+    ov = Path(__file__).resolve().parent / 'assets' / 'overview.png'
+    if ov.exists():
+        shutil.copy2(ov, DOCS / 'images' / '00-全景图.png')
     for png in sorted((ART / '配图').glob('*.png')):
         shutil.copy2(png, DOCS / 'images' / png.name)
     # 首页
