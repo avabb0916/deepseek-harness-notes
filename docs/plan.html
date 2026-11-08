@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSH 系列 · 一周学习 + 两周发布排期</title>
+<style>
+  :root {
+    --ink:#1b1a17; --muted:#6d685f; --line:#ddd7c9; --paper:#fbf9f3;
+    --accent:#b23a2a; --accent2:#1f4e5f; --code:#f2eee4; --hl:#f7efe2;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:ui-serif,"Songti SC","Noto Serif CJK SC",Georgia,serif;
+    line-height:1.78; font-size:16.5px; }
+  .page { max-width:1080px; margin:0 auto; padding:48px 40px 72px; }
+  header.doc { border-bottom:3px solid var(--ink); padding-bottom:22px; margin-bottom:36px; }
+  .kicker { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+    font-weight:700; }
+  h1 { font-size:34px; line-height:1.28; margin:10px 0 14px; letter-spacing:-.01em; }
+  .meta { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:13px; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap; }
+  h2 { font-size:23px; margin:44px 0 14px; padding-top:14px; border-top:1px solid var(--line); }
+  h3 { font-size:18.5px; margin:28px 0 10px; color:var(--accent2); }
+  h4 { font-size:16px; margin:22px 0 8px; }
+  p { margin:0 0 14px; }
+  ul,ol { margin:0 0 16px; padding-left:24px; }
+  li { margin:5px 0; }
+  blockquote { margin:18px 0; padding:14px 18px; background:var(--hl);
+    border-left:4px solid var(--accent); color:#3f3a33; }
+  blockquote p { margin:0; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em;
+    background:var(--code); padding:1px 5px; border-radius:4px; }
+  pre.code { background:#22201d; color:#f4efe6; padding:16px 18px; border-radius:8px;
+    overflow:auto; font-size:13.5px; line-height:1.6; margin:16px 0; }
+  pre.code code { background:none; padding:0; color:inherit; }
+  .table-wrap { overflow-x:auto; margin:18px 0 22px; border:1px solid var(--line); border-radius:8px; }
+  table { width:100%; border-collapse:collapse; font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:14px; background:#fff; }
+  th { background:#f0ebdf; text-align:left; padding:10px 12px; border-bottom:2px solid var(--line);
+    font-weight:700; white-space:nowrap; }
+  td { padding:10px 12px; border-bottom:1px solid #eee7d9; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  hr { border:none; border-top:1px dashed var(--line); margin:30px 0; }
+  figure.fig { margin:22px 0 26px; text-align:center; }
+  figure.fig img { max-width:100%; height:auto; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  figcaption { font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;
+    font-size:12.5px; color:var(--muted); margin-top:8px; }
+  img.inline-img { max-width:100%; height:auto; }
+  .img-missing { margin:18px 0; padding:14px 16px; background:#fdf0ee; border:1px dashed var(--accent);
+    border-radius:6px; font-family:ui-monospace,Menlo,monospace; font-size:13px; color:var(--accent); }
+  a { color:var(--accent2); text-decoration:underline; text-underline-offset:3px; }
+  footer.doc { margin-top:56px; padding-top:18px; border-top:3px solid var(--ink);
+    font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif; font-size:12.5px; color:var(--muted); }
+  @media print {
+    body { background:#fff; font-size:12.5pt; }
+    .page { max-width:none; padding:0; }
+    h2 { page-break-after:avoid; }
+    tr,li,blockquote,figure.fig { page-break-inside:avoid; }
+    figure.fig img { max-width:100%; }
+    .table-wrap { overflow:visible; }
+    a { color:inherit; text-decoration:none; }
+  }
+</style>
+</head>
+<body><div class="booknav" style="max-width:1080px;margin:0 auto;padding:14px 40px;font-size:13px;border-bottom:1px solid #ddd7c9"><a href="index.html" style="color:#1f4e5f">← 回目录</a></div>
+<div class="page">
+<header class="doc">
+  <div class="kicker">DSH RESEARCH · 排期</div>
+  <h1>DSH 系列 · 一周学习 + 两周发布排期</h1>
+  <div class="meta"><span>版本 v1.0 ｜ 2026-11-08 12:00 (Asia/Shanghai) ｜ 依据：24 篇提纲 + 现有 13 篇成稿 + 工作区内容发布 SOP</span></div>
+</header>
+<blockquote>把原来的「12 周 24 篇」压成：<strong>学习 7 天 + 发布 14 天，每天 1—2 篇。</strong></blockquote>
+<h2>为什么能压</h2>
+<p>因为<strong>写和发已经拆开了</strong>：</p>
+<ul>
+<li>24 篇的稿子今天补齐（不用边学边写边发）；</li>
+<li>学习周只做一件事：把稿子里的东西真正跑一遍、验一遍；</li>
+<li>发布周只做一件事：配图、质检、排版、发、守评、复盘。</li>
+</ul>
+<p>这比&quot;边学边写边发&quot;快，因为每天不用在三种状态之间切换。</p>
+<h2>一、学习周（7 天，每天约 3.5 小时）</h2>
+<p>目标：7 天后能回答三个问题——它是什么、它怎么跑、我能改哪里。每天&quot;读 2—4 篇 + 动手 1 件 + 写 3 行笔记&quot;。</p>
+<div class="table-wrap"><table><thead><tr>
+<th>天</th>
+<th>主题</th>
+<th>读哪几篇</th>
+<th>动手（必须真的做）</th>
+<th>验收（做到才算过）</th>
+</tr></thead><tbody>
+<tr><td>D1</td><td>定位与安装</td><td>01 / 02 / 03 / 04</td><td>用三种方式各启动一次；记下端口与报错</td><td>能用自己的话讲清 harness 与 IDE 的区别</td></tr>
+<tr><td>D2</td><td>会话、模型、工具</td><td>05 / 06 / 07</td><td>新建会话换一个工作目录；接一个非默认模型；数一次工具调用</td><td>能说清&quot;目录=项目身份&quot;和工具 schema 为什么影响输出</td></tr>
+<tr><td>D3</td><td>上下文与存储</td><td>08 / 16</td><td>打开一份 <code>session.v4.jsonl.zstd</code> 看结构；数一次压缩事件</td><td>能解释&quot;模型看到的历史从哪来&quot;</td></tr>
+<tr><td>D4</td><td>插件与接缝</td><td>09 / 10</td><td>跑一次 <code>--dump-config</code>；找出一个 ctx 键的提供方与消费者</td><td>能画出 seam 三角</td></tr>
+<tr><td>D5</td><td>事件、turn、提示</td><td>11 / 12 / 13</td><td>数一份日志里的 turn/step/tool 事件；找一次重试</td><td>能讲清 turn 里套 step、step 里套 request</td></tr>
+<tr><td>D6</td><td>结构、安全、多 agent</td><td>14 / 15 / 17 / 18</td><td>只读改一层 patch 再 dump 对比；检查自己的权限档</td><td>能说出危险配置在哪一行、怎么改回去</td></tr>
+<tr><td>D7</td><td>实战与判断</td><td>19 / 20 / 21 / 22 / 23 / 24</td><td>写一个 40 行插件壳；跑 89 条断言那套验证</td><td>能给出&quot;什么该插件化&quot;的三分法判断</td></tr>
+</tbody></table></div>
+<p>每天最后 10 分钟写 3 行笔记（学到什么 / 推翻什么 / 明天试什么），直接贴进 <code>03-文章</code> 对应篇的评论区草稿，发布时用得上。</p>
+<h2>二、发布两周（14 天，每天 1—2 篇）</h2>
+<p>起点：<strong>2026-11-09（周一）</strong>；终点 <strong>2026-11-22</strong>。24 篇 = 12 个发布日 × 2 篇。</p>
+<h3>每天固定节奏</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>时间</th>
+<th>动作</th>
+</tr></thead><tbody>
+<tr><td>08:30</td><td>发当天第一篇（X 长文），同时把封面/配图放进草稿</td></tr>
+<tr><td>09:00—10:30</td><td>守评：回前 10 条评论，置顶一条自己的补充</td></tr>
+<tr><td>12:30</td><td>转一次自己的帖，加一句&quot;这篇讲的是……&quot;</td></tr>
+<tr><td>20:30</td><td>发当天第二篇</td></tr>
+<tr><td>21:00—22:00</td><td>守评 + 记录数据（曝光/收藏/涨粉）</td></tr>
+<tr><td>22:00</td><td>5 分钟复盘：哪条钩子有效、明天要不要换标题</td></tr>
+</tbody></table></div>
+<h3>发布表（按学习顺序，不按编号）</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>日</th>
+<th>日期</th>
+<th>第一篇（08:30）</th>
+<th>第二篇（20:30）</th>
+<th>备注</th>
+</tr></thead><tbody>
+<tr><td>P1</td><td>11-09 周一</td><td>开篇帖 + 01 我为什么搬进来</td><td>02 没有核心的运行时</td><td>开篇帖单独发，置顶</td></tr>
+<tr><td>P2</td><td>11-10 周二</td><td>03 前世今生</td><td>04 三种装法</td><td></td></tr>
+<tr><td>P3</td><td>11-11 周三</td><td>05 会话与工作目录</td><td>06 模型与凭据</td><td></td></tr>
+<tr><td>P4</td><td>11-12 周四</td><td>07 工具系统</td><td>08 上下文不是聊天记录</td><td></td></tr>
+<tr><td>P5</td><td>11-13 周五</td><td>09 一切皆插件</td><td>10 接缝</td><td>周末前放两篇硬的</td></tr>
+<tr><td>P6</td><td>11-14 周六</td><td>11 事件三分</td><td>12 一次 turn</td><td>周六技术读者多</td></tr>
+<tr><td>P7</td><td>11-15 周日</td><td>13 系统提示</td><td>14 profile 与 bundle</td><td>周日晚发&quot;周一要用的&quot;</td></tr>
+<tr><td>P8</td><td>11-16 周一</td><td>15 两半结构</td><td>16 会话存储</td><td>中点：发一条系列进度帖</td></tr>
+<tr><td>P9</td><td>11-17 周二</td><td>17 安全</td><td>18 子代理与 Agent Teams</td><td>安全篇单独推一次</td></tr>
+<tr><td>P10</td><td>11-18 周三</td><td>19 写第一个插件</td><td>20 给插件加界面</td><td>插件两周，适合放一起</td></tr>
+<tr><td>P11</td><td>11-19 周四</td><td>21 研究台全过程</td><td>22 什么该插件化</td><td></td></tr>
+<tr><td>P12</td><td>11-20 周五</td><td>23 三种 Agent 形态</td><td>24 一年后回看</td><td>收官两篇</td></tr>
+<tr><td>P13</td><td>11-21 周六</td><td>缓冲：补发/重发数据最好的一篇</td><td>—</td><td>复盘 + 回评</td></tr>
+<tr><td>P14</td><td>11-22 周日</td><td>合集帖 + 索引 + 感谢</td><td>—</td><td>把 24 篇串成一条线</td></tr>
+</tbody></table></div>
+<h3>发布前每篇的四道闸门（先学会，再发）</h3>
+<p>每篇发布前必须先过这四道，过不了就顺延，不占排期：</p>
+<ol>
+<li><strong>我读得懂</strong>：从头到尾读一遍，没有卡住的段落。</li>
+<li><strong>三问能答</strong>：笔记头里&quot;读完能答的三个问题&quot;，不看正文能答出来。</li>
+<li><strong>术语能讲</strong>：术语小抄里的词，能用自己的话讲给一个外行。</li>
+<li><strong>边界能说</strong>：能说清这篇里哪些是实测、哪些是推断、哪些还没验证。</li>
+</ol>
+<h3>发布前每篇的 6 步（每篇 30—40 分钟）</h3>
+<ol>
+<li>配图确认（≤9 张，宽 1200，路径存在）</li>
+<li>质检：<code>node tools/qc_article.mjs 文章.md</code>，errors 必须 0</li>
+<li>风险检查：安全/对比两类词面过一遍（<code>05-发布包/04-发布前风险清单.md</code>）</li>
+<li>建 X 草稿（只建不发）：<code>node tools/x_publish.mjs --auto 关键词</code></li>
+<li>人工看一眼：标题、首段、图序、文末 CTA</li>
+<li>定时发（08:30 / 20:30）</li>
+</ol>
+<h3>平台分配</h3>
+<ul>
+<li><strong>X</strong>：主阵地，首发 + 独家感</li>
+<li><strong>公众号</strong>：延后 3 天同步（P4 起开始搬 P1 的内容）</li>
+<li><strong>Substack</strong>：延后 3 天，英文标题可后补</li>
+<li><strong>Obsidian</strong>：发布当天归档到 <code>03-已发布内容库</code>，更新索引</li>
+</ul>
+<h2>三、两周的硬约束</h2>
+<ol>
+<li><strong>一天最多 2 篇</strong>：超过 2 篇，互动会摊薄，读者也记不住。</li>
+<li><strong>同一时间只推一个&quot;钩子&quot;</strong>：一天两篇要错开角度（一篇认知、一篇方法）。</li>
+<li><strong>发布前一天必须把两篇草稿都建好</strong>，当天只做&quot;看一眼→发&quot;。</li>
+<li><strong>每篇发后 48h 记录数据</strong>：曝光、收藏、涨粉、评论里被问最多的问题。</li>
+<li><strong>数据不好不临时改稿</strong>：先按排期发完，第二周再根据第一周数据调标题/钩子。</li>
+</ol>
+<h2>四、指标（两周）</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>指标</th>
+<th>目标</th>
+<th>止损线</th>
+</tr></thead><tbody>
+<tr><td>发布完成率</td><td>24/24</td><td>低于 20 篇就砍到 18 篇精选；四道闸门不过的顺延</td></tr>
+<tr><td>单篇平均曝光</td><td>基线 × 1.5</td><td>连续 4 篇低于基线 → 换钩子</td></tr>
+<tr><td>涨粉</td><td>+300</td><td>低于 +100 → 加互动帖</td></tr>
+<tr><td>收藏/转发</td><td>至少 3 篇被同行引用</td><td>0 篇 → 改选题角度</td></tr>
+</tbody></table></div>
+<h2>五、今天（11-08）要完成的准备</h2>
+<ul>
+<li>[ ] 补齐剩余 11 篇（05/06/07/13/15/16/18/20/21/22/24）</li>
+<li>[ ] 每篇加版本号 + 配图 + 质检 errors=0</li>
+<li>[ ] 24 篇合集网页版重出</li>
+<li>[ ] 建 P1 的两篇 X 草稿（只建不发）</li>
+<li>[ ] 把本排期贴进 <code>00-系列总览</code> 和 Obsidian 首页</li>
+</ul>
+<h2>变更记录</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>版本</th>
+<th>时间</th>
+<th>变更</th>
+</tr></thead><tbody>
+<tr><td>v1.0</td><td>2026-11-08 12:00</td><td>首版：学习 7 天 + 发布 14 天，24 篇排到 12 个发布日</td></tr>
+<tr><td>v1.1</td><td>2026-11-08 12:20</td><td>加&quot;先学会再发布&quot;四道闸门：读得懂 / 三问能答 / 术语能讲 / 边界能说</td></tr>
+</tbody></table></div>
+<footer class="doc">版本 v1.0 ｜ 2026-11-08 12:00 (Asia/Shanghai) ｜ 依据：24 篇提纲 + 现有 13 篇成稿 + 工作区内容发布 SOP</footer>
+</div>
+</body>
+</html>

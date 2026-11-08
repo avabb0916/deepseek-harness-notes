@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一切皆插件 · DeepSeek Harness 学习笔记</title>
+<style>
+:root{--ink:#1b1a17;--muted:#6d685f;--line:#ddd7c9;--paper:#fbf9f3;--accent:#b23a2a;--accent2:#1f4e5f}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+font-family:ui-serif,"Songti SC","Noto Serif CJK SC",Georgia,serif;line-height:1.8;font-size:17px}
+.page{max-width:1080px;margin:0 auto;padding:56px 40px 80px}
+.kicker{font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+h1{font-size:40px;line-height:1.25;margin:12px 0 14px}h2{font-size:24px;margin:44px 0 14px;padding-top:14px;border-top:1px solid var(--line)}
+.meta{font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;font-size:13px;color:var(--muted)}
+blockquote{margin:22px 0;padding:16px 20px;background:#f7efe2;border-left:4px solid var(--accent);color:#3f3a33}
+ul.toc{padding-left:0;list-style:none;columns:2;column-gap:40px}ul.toc li{margin:8px 0;break-inside:avoid;font-size:15px}
+ul.toc a{color:var(--accent2);text-decoration:none}ol.toc a:hover{text-decoration:underline}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.gallery figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px}
+.gallery img{width:100%;height:auto;display:block;border-radius:4px}
+.gallery figcaption{font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+footer{margin-top:56px;padding-top:18px;border-top:3px solid var(--ink);font-family:ui-sans-serif,-apple-system,"PingFang SC",sans-serif;font-size:12.5px;color:var(--muted)}
+@media print{.gallery{grid-template-columns:repeat(2,1fr)}}
+</style></head><body><div class="page">
+<div class="kicker">DSH · 学习笔记</div>
+<h1>一切皆插件<br>我的 DeepSeek Harness 学习笔记</h1>
+<div class="meta">24 篇 ｜ 版本 v1.0 ｜ 2026-11-08 ｜ 依据：本机 dsh 0.2.2-rc.1 实测 + 官方文档 + X/社区资料</div>
+<blockquote>这不是教程，是我从 0 到 1 学 DeepSeek Harness 的笔记。我先学会，才发出来；看不懂的地方，我写"我还没搞懂"。</blockquote>
+<h2>怎么用这本笔记</h2>
+<p>1. 从第 01 篇开始读，每篇顶部有「我带着的问题」和「读完能答的三个问题」；答不出，就回去重读那一节。<br>
+2. 想动手的，按 <a href="plan.html">7 天学习 + 14 天发布计划</a> 每天读 2—4 篇 + 做 1 件小事。<br>
+3. 每篇文末有「术语小抄」和「我还没搞懂」，看不懂术语先看小抄。</p>
+<h2>目录（24 篇）</h2>
+<ul class="toc"><li><a href="ch01.html"><b>01</b> 我本来准备装两天就卸载 DeepSeek Harness</a></li>
+<li><a href="ch02.html"><b>02</b> 一个没有核心的 Agent 运行时</a></li>
+<li><a href="ch03.html"><b>03</b> 翻完 vendor 目录，我收回“抄 Claude Code”这句话</a></li>
+<li><a href="ch04.html"><b>04</b> 装 DSH 有三条路，选错那条会浪费你一周</a></li>
+<li><a href="ch05.html"><b>05</b> 为什么它总要问你"用哪个目录"</a></li>
+<li><a href="ch06.html"><b>06</b> 我烧了 93 亿 token，只有 0.3% 是它生成的</a></li>
+<li><a href="ch07.html"><b>07</b> 它没有变强，是有人给了它一张清单</a></li>
+<li><a href="ch08.html"><b>08</b> 上下文不是聊天记录：我拆开了自己的会话日志</a></li>
+<li><a href="ch09.html"><b>09</b> 为什么 DSH 敢让你中途卸掉一个插件</a></li>
+<li><a href="ch10.html"><b>10</b> 一个接口，换掉整个产品</a></li>
+<li><a href="ch11.html"><b>11</b> 三种事件：DSH 把"发生了什么"分成了三个世界</a></li>
+<li><a href="ch12.html"><b>12</b> 一次 turn 的完整旅程</a></li>
+<li><a href="ch13.html"><b>13</b> 系统提示不是一段文本，是一张拼出来的清单</a></li>
+<li><a href="ch14.html"><b>14</b> 我打开配置文件，里面只有两个方括号</a></li>
+<li><a href="ch15.html"><b>15</b> 两半结构：host 与 client，没有第三半</a></li>
+<li><a href="ch16.html"><b>16</b> 会话日志不是聊天记录，是一本只追加的账</a></li>
+<li><a href="ch17.html"><b>17</b> 一个 9.4 分的洞，和一次 400GB 的删除</a></li>
+<li><a href="ch18.html"><b>18</b> 我让 8 个 agent 并行写稿，崩的不是模型是文件</a></li>
+<li><a href="ch19.html"><b>19</b> 我写第一个 DSH 插件：注册成功了，模型却用不了</a></li>
+<li><a href="ch20.html"><b>20</b> 我的插件只有一半：另一半跑在浏览器里</a></li>
+<li><a href="ch21.html"><b>21</b> 这个系列是这个插件管的，它返工了三次</a></li>
+<li><a href="ch22.html"><b>22</b> 什么该做成插件，什么不该</a></li>
+<li><a href="ch23.html"><b>23</b> DSH、Claude Code、Codex：三种 Agent 形态，不是三个竞品</a></li>
+<li><a href="ch24.html"><b>24</b> 37 个版本，0 个正式版，我还在用它</a></li></ul>
+<h2>配图</h2>
+<p>全部配图为手绘白底风格，可单独保存使用（19 张）。</p>
+<div class="gallery"><figure><img src="images/00-封面.png" alt="00-封面"><figcaption>00-封面</figcaption></figure>
+<figure><img src="images/01-插件树.png" alt="01-插件树"><figcaption>01-插件树</figcaption></figure>
+<figure><img src="images/02-两半一面.png" alt="02-两半一面"><figcaption>02-两半一面</figcaption></figure>
+<figure><img src="images/03-日志派生.png" alt="03-日志派生"><figcaption>03-日志派生</figcaption></figure>
+<figure><img src="images/04-权限是事件.png" alt="04-权限是事件"><figcaption>04-权限是事件</figcaption></figure>
+<figure><img src="images/05-插件契约三坑.png" alt="05-插件契约三坑"><figcaption>05-插件契约三坑</figcaption></figure>
+<figure><img src="images/06-时间线.png" alt="06-时间线"><figcaption>06-时间线</figcaption></figure>
+<figure><img src="images/07-选型象限.png" alt="07-选型象限"><figcaption>07-选型象限</figcaption></figure>
+<figure><img src="images/08-安全清单.png" alt="08-安全清单"><figcaption>08-安全清单</figcaption></figure>
+<figure><img src="images/09-三条路.png" alt="09-三条路"><figcaption>09-三条路</figcaption></figure>
+<figure><img src="images/10-seam三角.png" alt="10-seam三角"><figcaption>10-seam三角</figcaption></figure>
+<figure><img src="images/11-工作目录.png" alt="11-工作目录"><figcaption>11-工作目录</figcaption></figure>
+<figure><img src="images/11-研究台看板.png" alt="11-研究台看板"><figcaption>11-研究台看板</figcaption></figure>
+<figure><img src="images/12-成本结构.png" alt="12-成本结构"><figcaption>12-成本结构</figcaption></figure>
+<figure><img src="images/13-工具管线.png" alt="13-工具管线"><figcaption>13-工具管线</figcaption></figure>
+<figure><img src="images/14-提示词组装.png" alt="14-提示词组装"><figcaption>14-提示词组装</figcaption></figure>
+<figure><img src="images/15-多agent写域.png" alt="15-多agent写域"><figcaption>15-多agent写域</figcaption></figure>
+<figure><img src="images/16-客户端两半.png" alt="16-客户端两半"><figcaption>16-客户端两半</figcaption></figure>
+<figure><img src="images/17-三分法.png" alt="17-三分法"><figcaption>17-三分法</figcaption></figure></div>
+<footer>版本 v1.0 ｜ 2026-11-08 ｜ 依据：dsh-series/03-文章 24 篇 ｜ 本机 dsh 0.2.2-rc.1</footer>
+</div></body></html>
